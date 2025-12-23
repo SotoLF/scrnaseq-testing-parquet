@@ -1,0 +1,12 @@
+name: scrnaseq_browser
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  # Minimal base - only Python, R, and pip
+  - python=3.11
+  - r-base=4.3
+  - pip
+  - awscli
+  - fsspec
+  - s3fs
