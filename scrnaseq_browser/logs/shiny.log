@@ -1,0 +1,45 @@
+Starting scRNA-seq Shiny App...
+Backend: http://localhost:8000
+
+Loading required package: shiny
+
+Attaching package: ‘bslib’
+
+The following object is masked from ‘package:utils’:
+
+    page
+
+
+Attaching package: ‘jsonlite’
+
+The following object is masked from ‘package:shiny’:
+
+    validate
+
+Warning in shiny::runApp(appDir = ".", host = "0.0.0.0", port = shiny_port,  :
+  Shiny Server v0.3.4 or later is required; please upgrade!
+
+Listening on http://0.0.0.0:3838
+[gene_search] ERROR: 
+Warning: Groups with fewer than two datapoints have been dropped.
+ℹ Set `drop = FALSE` to consider such groups for position adjustment purposes.
+Warning: Groups with fewer than two datapoints have been dropped.
+ℹ Set `drop = FALSE` to consider such groups for position adjustment purposes.
+Warning: Groups with fewer than two datapoints have been dropped.
+ℹ Set `drop = FALSE` to consider such groups for position adjustment purposes.
+Warning: Groups with fewer than two datapoints have been dropped.
+ℹ Set `drop = FALSE` to consider such groups for position adjustment purposes.
+Warning: Groups with fewer than two datapoints have been dropped.
+ℹ Set `drop = FALSE` to consider such groups for position adjustment purposes.
+Warning: Groups with fewer than two datapoints have been dropped.
+ℹ Set `drop = FALSE` to consider such groups for position adjustment purposes.
+Warning: Groups with fewer than two datapoints have been dropped.
+ℹ Set `drop = FALSE` to consider such groups for position adjustment purposes.
+Warning: Groups with fewer than two datapoints have been dropped.
+ℹ Set `drop = FALSE` to consider such groups for position adjustment purposes.
+Warning: Groups with fewer than two datapoints have been dropped.
+ℹ Set `drop = FALSE` to consider such groups for position adjustment purposes.
+Warning in RColorBrewer::brewer.pal(min(length(levels), 11), categorical_palette) :
+  n too large, allowed maximum for palette Set1 is 9
+Returning the palette you asked for with that many colors
+
