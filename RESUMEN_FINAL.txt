@@ -1,0 +1,68 @@
+═══════════════════════════════════════════════════════════════
+  🧬 scRNA-seq Browser - Configuración Final (Diciembre 2024)
+═══════════════════════════════════════════════════════════════
+
+✅ PROYECTO COMPLETAMENTE FUNCIONAL
+
+📁 Estructura:
+   backend/               FastAPI + Parquet backend
+   shiny/                 Shiny R app (frontend)
+   parquet_out/           Dataset 1 (strict_epdsc) - S3
+   parquet_bm/            Dataset 2 (BoneMarrow) - S3 y local
+   run_app.sh             🚀 Script principal
+
+📊 DATASETS SOPORTADOS:
+
+   1. parquet_out (strict_epdsc_annotated_data.h5)
+      - Layers: raw, cellbender, MAGIC_imputed_data
+      - Format: parquet_wide_gene_chunks
+      - Chunks: 31 (256 genes/chunk)
+      
+   2. parquet_bm (BoneMarrow_May2024_outliers_removed_Palantir.h5ad)
+      - Layers: X, raw_counts, unlogged_normalized, lognorm_pseudocount.1
+      - Format: sparse_long_gene_chunks (X), parquet_wide_gene_chunks (otros)
+      - 75,386 células, 26,708 genes
+      - Variables categóricas: Annotation, Cluster_Coarse, Cluster_Fine, Sample
+
+🚀 CÓMO USAR:
+
+   1. conda activate scrnaseq_browser
+   2. Configurar .env con el dataset deseado:
+      PARQUET_DATA_DIR=s3://luis-scrnaseq-data/parquet_bm
+   3. ./run_app.sh
+
+🌐 URLs:
+   - Shiny App: http://localhost:3838
+   - API:       http://localhost:8000
+   - API Docs:  http://localhost:8000/docs
+
+📦 SCRIPTS DE CONVERSIÓN:
+
+   convert_to_parquet.py          Convierte h5ad a parquet (formato wide)
+   h5ad_to_parquet_stream_h5py.py Convierte h5ad grande con streaming (bajo RAM)
+   add_categorical_to_obs.py      Agrega variables categóricas a obs.parquet existente
+
+🔧 ARCHIVOS CLAVE DEL BACKEND:
+
+   backend/app/main.py            Endpoints FastAPI
+   backend/app/parquet_backend.py Lector de Parquet con soporte multi-formato
+   backend/app/config.py          Configuración desde .env
+   backend/app/cache.py           Cache en memoria
+
+📋 CARACTERÍSTICAS DEL BACKEND:
+
+   ✅ Soporta múltiples formatos de manifest (layers/matrices)
+   ✅ Resuelve automáticamente nombres de layers (X → raw si no existe X)
+   ✅ Soporta obsm y obsm_exported
+   ✅ Soporta sparse_long y parquet_wide formats
+   ✅ Codificación base64 para datos binarios
+   ✅ Lee desde local o S3
+
+🛠️ TROUBLESHOOTING:
+
+   Ver logs:     tail -f logs/backend.log
+   Verificar:    ./check_setup.sh
+   Test backend: ./test_backend.sh
+   Detener:      Ctrl+C en terminal de run_app.sh
+
+═══════════════════════════════════════════════════════════════

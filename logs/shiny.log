@@ -1,0 +1,36 @@
+Starting scRNA-seq Shiny App...
+Backend: http://localhost:8000
+
+Loading required package: shiny
+
+Attaching package: ‘bslib’
+
+The following object is masked from ‘package:utils’:
+
+    page
+
+
+Attaching package: ‘jsonlite’
+
+The following object is masked from ‘package:shiny’:
+
+    validate
+
+Warning in shiny::runApp(appDir = ".", host = "0.0.0.0", port = shiny_port,  :
+  Shiny Server v0.3.4 or later is required; please upgrade!
+
+Listening on http://0.0.0.0:3939
+[gene_search] ERROR: 
+Time to render heatmap: 0.44s
+Time to render heatmap: 1.4s
+Time to render heatmap: 0.22s
+Time to render heatmap: 0.23s
+Time to render heatmap: 0.25s
+Time to render heatmap: 0.24s
+Time to render heatmap: 0.22s
+Time to render heatmap: 0.22s
+Time to render heatmap: 0.22s
+Time to render heatmap: 0.21s
+Time to render heatmap: 0.23s
+Time to render heatmap: 0.22s
+Time to render heatmap: 0.24s

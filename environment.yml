@@ -1,0 +1,51 @@
+name: scrnaseq_browser
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+dependencies:
+  # Python
+  - python>=3.10
+  - pip
+  
+  # FastAPI Backend
+  - fastapi
+  - uvicorn
+  - python-dotenv
+  - pydantic
+  
+  # Data handling
+  - pandas
+  - numpy
+  - pyarrow
+  - h5py
+  - scipy
+  
+  # AWS S3 support
+  - boto3
+  - s3fs
+  - fsspec
+  - awscli
+  
+  # R and Shiny
+  - r-base>=4.2
+  - r-shiny
+  - r-shinydashboard
+  - r-shinywidgets
+  - r-httr
+  - r-jsonlite
+  - r-ggplot2
+  - r-dplyr
+  - r-plotly
+  - r-dt
+  - r-colourpicker
+  - r-viridis
+  - r-scales
+  
+  # Optional: for data inspection
+  - scanpy
+  - anndata
+  
+  # Pip packages (if not available in conda)
+  - pip:
+    - httpx
